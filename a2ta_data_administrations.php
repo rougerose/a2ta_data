@@ -58,9 +58,11 @@ function a2ta_data_configurer_dependances() {
 	$gis_conf_associations = array(
 		'lat' => '48.8566969', // Paris
 		'lon' => '2.3514616',
-		'zoom' => '10',
+		'zoom' => '6',
 		'geocoder' => 'on',
 		'adresse' => 'on',
+    'layer_defaut' => 'cartodb_positron',
+    'plugins_desactives' => array('KML.js', 'GPX.js', 'TOPOJSON.js', 'Control.FullScreen.js', 'Control.MiniMap.js');
 		'gis_objets' => array('spip_associations')
 	);
 	$gis_conf = array_merge($gis_conf, $gis_conf_associations);
