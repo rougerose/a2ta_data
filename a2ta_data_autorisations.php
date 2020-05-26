@@ -113,9 +113,9 @@ function autoriser_association_supprimer_dist($faire, $type, $id, $qui, $opt) {
  * @param  array  $opt   Options de cette autorisation
  * @return bool          true s'il a le droit, false sinon
  */
-// function autoriser_get_collection($faire, $type, $id, $qui, $opt) {
-// 	return false;
-// }
+function autoriser_get_collection($faire, $type, $id, $qui, $opt) {
+	return false;
+}
 
 /**
  * Aucune collection sauf les associations.
@@ -127,6 +127,6 @@ function autoriser_association_supprimer_dist($faire, $type, $id, $qui, $opt) {
  * @param  array  $opt   Options de cette autorisation
  * @return bool          true s'il a le droit, false sinon
  */
-// function autoriser_association_get_collection($faire, $type, $id, $qui, $opt) {
-// 	return true;
-// }
+function autoriser_association_get_collection($faire, $type, $id, $qui, $opt) {
+	return true;
+}

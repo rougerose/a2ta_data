@@ -18,6 +18,7 @@
   <necessite nom="gis" compatibilite="[4.47.18;[" />
   <necessite nom="rezosocios" compatibilite="[0.6.2;[" />
   <necessite nom="a2ta_subdivisions" compatibilite="[1.0.0;[" />
+  <necessite nom="collectionjson" compatibilite="[1.5.1;]" />
 
   <pipeline nom="declarer_champs_extras" inclure="base/a2ta_data.php" />
   <pipeline nom="declarer_tables_objets_sql" inclure="base/a2ta_data.php" />
