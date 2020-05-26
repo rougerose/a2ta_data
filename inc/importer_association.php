@@ -600,29 +600,12 @@ function importer_association_activites($id_association, $activites, $mots_cles)
 	// Tableau des id_mot qui seront liés à l'association
 	$ids_mot = array();
 
-	$pattern = "/\([^)]*\)|(\s*,\s*)/";
-
 	foreach ($activites as $activite) {
-		// Pour éviter des recherches ambigues,
-		// on supprime les mots éventuellement
-		// entre parenthèses dans le libellé de
-		// l'activité (fichier CSV). Ce qui permet
-		// de faire une recherche plus sélective.
-		// Néanmoins, la recherche reste un peu trop
-		// large compte tenu des libellés utilisés
-		// dans le fichier CSV sont différents de ceux
-		// utilisés sur le site.
+		$index = array_search($activite, $mots_cles);
 
-		// TODO: à partir du moment, où les titres
-		// seront définis, il faudra adapter le script
-		// pour faire une recherche exacte
-		// titre source/titre mot-clé.
-
-		$activite = preg_replace($pattern, " ", $activite);
-
-		if ($index = array_search_partiel($mots_cles, $activite)) {
-			$ids_mot[] = $index;
-		}
+    if ($index) {
+      $ids_mot[] = $index;
+    }
 	}
 
 	// Associer les mots-clés à l'association.
