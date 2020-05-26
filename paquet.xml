@@ -1,0 +1,31 @@
+<paquet
+  prefix="a2ta_data"
+  categorie="divers"
+  version="1.0.0"
+  etat="dev"
+  compatibilite="[3.2.7;3.2.*]"
+  logo=""
+  documentation=""
+  schema="1.0.0"
+>
+  <nom>A2TA Données</nom>
+  <auteur lien='http://rouge-rose.net'>christophe le drean</auteur>
+  <licence>GNU/GPL v3</licence>
+
+  <necessite nom="coordonnees" />
+  <necessite nom="saisies" compatibilite="[3.23.2;[" />
+  <necessite nom="cextras" compatibilite="[3.12.7;[" />
+  <necessite nom="gis" compatibilite="[4.47.18;[" />
+  <necessite nom="rezosocios" compatibilite="[0.6.2;[" />
+  <necessite nom="a2ta_subdivisions" compatibilite="[1.0.0;[" />
+
+  <pipeline nom="declarer_champs_extras" inclure="base/a2ta_data.php" />
+  <pipeline nom="declarer_tables_objets_sql" inclure="base/a2ta_data.php" />
+  <pipeline nom="declarer_tables_interfaces" inclure="base/a2ta_data.php" />
+  <pipeline nom="optimiser_base_disparus" inclure="a2ta_data_pipelines.php" />
+  <pipeline nom="autoriser" inclure="a2ta_data_autorisations.php" />
+  <pipeline nom="formulaire_saisies" inclure="a2ta_data_pipelines.php" />
+  <pipeline nom="optimiser_base_disparus" inclure="a2ta_data_pipelines.php" />
+
+  <menu nom="associations" titre="association:titre_associations" parent="menu_edition" icone="images/association-16.png" action="associations" />
+</paquet>

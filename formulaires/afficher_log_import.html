@@ -1,0 +1,32 @@
+#SET{idlog, #ARRAY}
+<BOUCLE_imports(spip_associations_imports){!par date}>
+	#SET{idlog, #GET{idlog}|array_merge{#ARRAY{#DATE, #ID_ASSOCIATIONS_IMPORT}}}
+</BOUCLE_imports>
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	<form method="post" action="#ENV{action}">
+		<div>
+			#ACTION_FORMULAIRE{#ENV{action}}
+			[(#SAISIE{selection, id_log}
+				{label=<:a2ta_data:label_selection_log:>}
+				{datas=#GET{idlog}|array_flip})
+			]
+			<p class="boutons">
+				<span class="image_loading">&nbsp;</span>
+				<input type="submit" class="submit" value="<:a2ta_data:label_submit_afficher_log:>" />
+			</p>
+
+			<BOUCLE_condition_affichage(CONDITION){si #ENV{id_log}}>
+				<BOUCLE_log(spip_associations_imports){id_associations_import=#ENV{id_log}}>
+					[(#ASSOCIATIONS|non) <div class="editer"><p>Aucun résultat</p></div>]
+					[(#ASSOCIATIONS|oui)
+						[(#SET{id_asso, #ASSOCIATIONS})]
+						<INCLURE{fond=formulaires/inc-log-associations, ids=#GET{id_asso}}/>
+					]
+				</BOUCLE_log>
+			</BOUCLE_condition_affichage>
+		</div>
+	</form>
+</div>

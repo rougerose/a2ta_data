@@ -1,0 +1,3 @@
+<BOUCLE_rezos(DATA){liste facebook, twitter, instagram}{","}>
+  ["(#VALEUR)"]:<BOUCLE_rezo(REZOSOCIOS){type_rezo=#VALEUR}{id_association}>[(#VALEUR|rezosocios_url{#NOM_COMPTE}|json_encode)]</BOUCLE_rezo>""<//B_rezo></BOUCLE_rezos>
+#FILTRE{trim}

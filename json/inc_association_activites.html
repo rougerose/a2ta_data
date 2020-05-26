@@ -1,0 +1,10 @@
+<BOUCLE_asso(ASSOCIATIONS){id_association}>
+#SET{activites, #ARRAY}
+<BOUCLE_activites(MOTS){id_association}{id_groupe=1}{par titre}>
+[(#SET{desc, [ \((#DESCRIPTIF|textebrut)\)]})]
+[(#SET{activites, #GET{activites}|push{#TITRE|textebrut|concat{#GET{desc}}}})]
+</BOUCLE_activites>
+[(#SET{activites, #GET{activites}|implode{'|'}})]
+  "activities":[(#GET{activites}|json_encode)]
+</BOUCLE_asso>
+#FILTRE{trim}

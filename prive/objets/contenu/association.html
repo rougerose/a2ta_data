@@ -1,0 +1,27 @@
+<BOUCLE_association(ASSOCIATIONS){id_association}{statut?}>
+[<div class="champ contenu_nom[ (#NOM*|strlen|?{'',vide})]">
+	<label><:association:champ_nom_label:> : </label>
+	<span dir="#LANG_DIR" class="#EDIT{nom} nom">(#NOM)</span>
+</div>]
+
+[<div class="champ contenu_membre_fraap[ (#MEMBRE_FRAAP*|strlen|?{'',vide})]">
+	<label><:association:champ_membre_fraap_label:> : </label>
+	<span dir="#LANG_DIR" class="#EDIT{membre_fraap} membre_fraap">(#MEMBRE_FRAAP|=={1}|?{oui, non})</span>
+</div>]
+
+[<div class="champ contenu_url_site[ (#URL_SITE*|strlen|?{'',vide})]">
+	<label><:association:champ_url_site_label:> : </label>
+	<span dir="#LANG_DIR" class="#EDIT{url_site} site_web">(#URL_SITE|propre|inserer_attribut{class,url_site})</span>
+</div>]
+
+[<div class="champ contenu_url_site_supp[ (#URL_SITE_SUPP*|strlen|?{'',vide})]">
+	<label><:association:champ_url_site_supp_label:> : </label>
+	<span dir="#LANG_DIR" class="#EDIT{url_site_supp} site_web">(#URL_SITE_SUPP|propre|inserer_attribut{class,url_site})</span>
+</div>]
+
+[<div class="champ contenu_date_creation[ (#DATE_CREATION*|!={0000-00-00 00:00:00}|?{'',vide})]">
+	<label><:association:champ_date_creation_label:> : </label>
+	<span dir="#LANG_DIR" class="#EDIT{date_creation} date_creation">(#DATE_CREATION|=={0000-00-00 00:00:00}|?{'',[(#DATE_CREATION|affdate)]})</span>
+</div>]
+
+</BOUCLE_association>

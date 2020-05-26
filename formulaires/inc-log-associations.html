@@ -1,0 +1,10 @@
+[(#SET{ids, #ENV{ids}|unserialize})]
+<B_d>
+	<div class="editer">
+		<BOUCLE_d(DATA){source tableau, #GET{ids}}>
+			<BOUCLE_asso(ASSOCIATIONS){id_association=#VALEUR}{statut IN prepa, publie}>
+				<div>[(#LOG_IMPORT|propre)]</div>
+			</BOUCLE_asso>
+		</BOUCLE_d>
+	</div>
+</B_d>
