@@ -1,6 +1,6 @@
 <BOUCLE_adresse(ADRESSES){id_association}{type=work}>
-<BOUCLE_departement(GEO_SUBDIVISIONS){code=#DEPARTEMENT}>[(#SET{departement,#NOM})]</BOUCLE_departement>
-<BOUCLE_region(GEO_SUBDIVISIONS){code=#REGION}>[(#SET{region,#NOM})]</BOUCLE_region>
+<BOUCLE_departement(SUBDIVISIONS){id_subdivision=#DEPARTEMENT}>[(#SET{departement,#NOM})]</BOUCLE_departement>
+<BOUCLE_region(SUBDIVISIONS){id_subdivision=#REGION}>[(#SET{region,#NOM})]</BOUCLE_region>
 <BOUCLE_pays(PAYS){code=#PAYS}>[(#SET{pays,#NOM})]</BOUCLE_pays>
   "address1":[(#VOIE|json_encode)],
   "address2":[(#COMPLEMENT|json_encode)],
